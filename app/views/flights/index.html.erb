@@ -4,7 +4,8 @@
   <table id="flight_<%= flight.id %>">
     <thead>
       <tr>
-        <th>Flight ID : <%= flight.id %></th>
+        <th>Flight # <%= flight.id %></th>
+        <th><%= flight.airline.name %></th>
         <th></th>
       </tr>
     </thead>
@@ -13,7 +14,7 @@
       <% flight.passengers.each do |passenger| %>
           <tr id="passenger_<%= passenger.id %>">
             <td><%= passenger.name %></td>
-            <td><%= link_to "Remove Plant", remove_passenger_url(passenger.id, flight.id), method: :delete %></td>
+            <td><%= link_to "Remove #{passenger.name}", remove_passenger_url(passenger.id, flight.id), method: :delete %></td>
           </tr>
       <% end %>
     </tbody>

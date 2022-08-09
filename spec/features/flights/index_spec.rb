@@ -13,10 +13,8 @@ RSpec.describe 'flights index page', type: :feature do
   let!(:flights_passenger_3) { FlightsPassenger.create(flight_id: flight_2.id, passenger_id: passenger_3.id) }
 
   it 'lists all flight numbers' do
-    within "#flights" do
-      expect(page).to have_content(flight_1.number)
-      expect(page).to have_content(flight_2.number)
-    end
+    expect(page).to have_content(flight_1.number)
+    expect(page).to have_content(flight_2.number)
   end
 
   it "lists the airline next to each flight number" do
@@ -29,7 +27,7 @@ RSpec.describe 'flights index page', type: :feature do
   end
 
   it "lists the names of the flights passengers" do
-    within "#flight-#{flight_1.id}" do
+    within "#flight_#{flight_1.id}" do
       expect(page).to have_content(passenger_1.name)
       expect(page).to have_content(passenger_2.name)
       expect(page).to have_content(passenger_3.name)
@@ -37,7 +35,7 @@ RSpec.describe 'flights index page', type: :feature do
   end
 
   it "has a link next to each passenger name to remove that passenger from that flight" do
-    within "#flight-#{flight_1.id}" do
+    within "#flight_#{flight_1.id}" do
       expect(page).to have_link("Remove #{passenger_1.name}")
       expect(page).to have_link("Remove #{passenger_2.name}")
       expect(page).not_to have_link("Remove #{passenger_3.name}")
@@ -45,7 +43,7 @@ RSpec.describe 'flights index page', type: :feature do
   end
 
   it "removes a passenger from a flight" do
-    within "#flight-#{flight_1.id}" do
+    within "#passenger_#{passenger_1.id}" do
       click_link "Remove #{passenger_1.name}"
     end
       expect(current_path).to eq(flights_path)
@@ -55,7 +53,7 @@ RSpec.describe 'flights index page', type: :feature do
   end
 
   it "does not destroy the passeenger record entirely" do
-    within "#flight-#{flight_1.id}" do
+    within "#passenger_#{passenger_1.id}" do
       click_link "Remove #{passenger_1.name}"
     end
       expect(current_path).to eq(flights_path)
