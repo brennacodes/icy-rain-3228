@@ -12,17 +12,21 @@ RSpec.describe 'flights index page', type: :feature do
   let!(:flights_passenger_2) { FlightsPassenger.create(flight_id: flight_1.id, passenger_id: passenger_2.id) }
   let!(:flights_passenger_3) { FlightsPassenger.create(flight_id: flight_2.id, passenger_id: passenger_3.id) }
 
+  before do
+    visit "/flights"
+  end
+
   it 'lists all flight numbers' do
     expect(page).to have_content(flight_1.number)
     expect(page).to have_content(flight_2.number)
   end
 
   it "lists the airline next to each flight number" do
-    within "#airline-#{airline_1.id}" do
+    within "#flight_#{flight_1.id}" do
       expect(page).to have_content(flight_1.number)
       expect(page).to have_content(airline_1.name)
 
-      expect(flight_1.number).to appear_before(airline_1.name)
+      expect(page).to have_content("Flight # AA1234 American Airlines")
     end
   end
 
@@ -30,7 +34,7 @@ RSpec.describe 'flights index page', type: :feature do
     within "#flight_#{flight_1.id}" do
       expect(page).to have_content(passenger_1.name)
       expect(page).to have_content(passenger_2.name)
-      expect(page).to have_content(passenger_3.name)
+      expect(page).not_to have_content(passenger_3.name)
     end
   end
 

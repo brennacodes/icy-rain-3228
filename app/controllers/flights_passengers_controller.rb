@@ -1,6 +1,6 @@
 class FlightsPassengersController < ApplicationController
   def destroy
-    passenger = PassengersFlight.locate_passenger(params[:id], params[:passenger_id])
+    passenger = FlightsPassenger.locate_passenger(params[:flight_id], params[:id])
     passenger.destroy
     redirect_to flights_url
   end
