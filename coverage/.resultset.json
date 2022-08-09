@@ -261,11 +261,11 @@
           1,
           null,
           1,
-          0,
+          1,
           null,
           null,
           1,
-          0,
+          1,
           null,
           null
         ]
@@ -274,6 +274,19 @@
         "lines": [
           1,
           1,
+          null
+        ]
+      },
+      "/Users/brennastuart/Documents/turing/2-and-3-mods/2-mod/ICs/icy-rain-3228/spec/models/flight_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          2,
+          2,
+          2,
+          null,
           null
         ]
       },
@@ -286,14 +299,30 @@
           null
         ]
       },
-      "/Users/brennastuart/Documents/turing/2-and-3-mods/2-mod/ICs/icy-rain-3228/app/models/passenger.rb": {
+      "/Users/brennastuart/Documents/turing/2-and-3-mods/2-mod/ICs/icy-rain-3228/spec/models/flights_passenger_spec.rb": {
         "lines": [
           1,
+          null,
+          1,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          null,
+          1,
+          2,
+          2,
+          null,
+          null,
           1,
           1,
           1,
           null,
-          1,
+          null,
           null
         ]
       },
@@ -304,38 +333,32 @@
           1,
           null,
           1,
-          2,
+          1,
           null,
           null
         ]
       },
-      "/Users/brennastuart/Documents/turing/2-and-3-mods/2-mod/ICs/icy-rain-3228/app/controllers/flights_controller.rb": {
+      "/Users/brennastuart/Documents/turing/2-and-3-mods/2-mod/ICs/icy-rain-3228/spec/models/passenger_spec.rb": {
         "lines": [
           1,
+          null,
           1,
-          8,
           null,
           null
         ]
       },
-      "/Users/brennastuart/Documents/turing/2-and-3-mods/2-mod/ICs/icy-rain-3228/app/controllers/application_controller.rb": {
-        "lines": [
-          1,
-          null
-        ]
-      },
-      "/Users/brennastuart/Documents/turing/2-and-3-mods/2-mod/ICs/icy-rain-3228/app/controllers/flights_passengers_controller.rb": {
+      "/Users/brennastuart/Documents/turing/2-and-3-mods/2-mod/ICs/icy-rain-3228/app/models/passenger.rb": {
         "lines": [
           1,
           1,
-          2,
-          2,
-          2,
+          1,
+          1,
           null,
+          3,
           null
         ]
       }
     },
-    "timestamp": 1660065149
+    "timestamp": 1660065686
   }
 }
