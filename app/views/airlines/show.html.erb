@@ -1,17 +1,17 @@
 <h1>Airline</h1>
 
 
-<% @airline.sort_by_number_of_passengers.each do |passenger| %>
-  <table>
+<table>
     <thead>
       <tr>
         <th>Passengers</th>
       </tr>
     </thead>
     <tbody>
-      <tr id="passenger_<%= passenger.id %>">
-        <td><%= passenger.name %></td>
-      </tr>
+      <% @airline.adult_passengers.each do |passenger| %>
+        <tr id="passenger_<%= passenger.id %>">
+          <td><%= passenger.name %></td>
+        </tr>
+      <% end %>
     </tbody>
-  </table>
-<% end %>
+</table>
