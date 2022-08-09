@@ -12,7 +12,7 @@ RSpec.describe 'flights index page', type: :feature do
   let!(:flights_passenger_2) { FlightsPassenger.create(flight_id: flight_1.id, passenger_id: passenger_2.id) }
   let!(:flights_passenger_3) { FlightsPassenger.create(flight_id: flight_2.id, passenger_id: passenger_3.id) }
 
-  it 'lists all flight numbers'
+  it 'lists all flight numbers' do
     within "#flights" do
       expect(page).to have_content(flight_1.number)
       expect(page).to have_content(flight_2.number)
@@ -52,7 +52,6 @@ RSpec.describe 'flights index page', type: :feature do
 
       expect(page).to have_content(passenger_2.name)
       expect(page).not_to have_content(passenger_1.name)
-    end
   end
 
   it "does not destroy the passeenger record entirely" do

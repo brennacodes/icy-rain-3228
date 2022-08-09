@@ -61,4 +61,5 @@ RSpec.describe 'airlines show page', type: :feature do
       expect(passenger_2.name).to appear_before(passenger_3.name)
       expect(passenger_3.name).to appear_before(passenger_4.name)
     end
+  end
 end
