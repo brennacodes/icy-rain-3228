@@ -36,11 +36,6 @@ RSpec.describe 'flights index page', type: :feature do
     end
   end
 
-  # Next to each passengers name
-  # I see a link or button to remove that passenger from that flight
-  # When I click on that link/button
-  # I'm returned to the flights index page
-  # And I no longer see that passenger listed under that flight
   it "has a link next to each passenger name to remove that passenger from that flight" do
     within "#flight-#{flight_1.id}" do
       expect(page).to have_link("Remove #{passenger_1.name}")

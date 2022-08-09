@@ -18,9 +18,6 @@ RSpec.describe 'airlines show page', type: :feature do
     visit airline_path(airline_1)
   end
 
-  # Then I see a list of passengers that have flights on that airline
-  # And I see that this list is unique (no duplicate passengers)
-  # And I see that this list only includes adult passengers
   it 'has a list of unique passengers that have flights on that airline' do
     within "#passengers" do
       expect(page).to have_content(passenger_1.name)
