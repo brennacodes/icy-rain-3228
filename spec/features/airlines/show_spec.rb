@@ -43,8 +43,8 @@ RSpec.describe 'airlines show page', type: :feature do
   end
 
   it 'only shows adult passengers' do
-    passenger_5 = Passenger.create(name: 'Jane Doe', age: 12)
-    flights_passenger_5 = FlightsPassenger.create(flight_id: flight_1.id, passenger_id: passenger_5.id)
+    passenger_6 = Passenger.create(name: 'Jane Doe', age: 12)
+    flights_passenger_5 = FlightsPassenger.create(flight_id: flight_1.id, passenger_id: passenger_6.id)
 
     within "#passenger_#{passenger_1.id}" do
       expect(page).to have_content("#{passenger_1.name}")
@@ -58,7 +58,16 @@ RSpec.describe 'airlines show page', type: :feature do
       expect(page).to have_content("#{passenger_3.name}")
     end
 
-    expect(page).not_to have_content("#{passenger_5.name}")
+    expect(page).not_to have_content("#{passenger_6.name}")
+
+    adult_passengers = airline_1.adult_passengers
+    expect(adult_passengers.count).to eq(5)
+    expect(adult_passengers).to include(passenger_1)
+    expect(adult_passengers).to include(passenger_2)
+    expect(adult_passengers).to include(passenger_3)
+    expect(adult_passengers).to include(passenger_4)
+    expect(adult_passengers).to include(passenger_5)
+    expect(adult_passengers).not_to include(passenger_6)
   end
 
   it 'sorts list of passengers by number of flights each has taken on that airline' do

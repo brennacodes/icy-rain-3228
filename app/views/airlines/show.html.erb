@@ -8,7 +8,7 @@
       </tr>
     </thead>
     <tbody>
-      <% @airline.adult_passengers.each do |passenger| %>
+      <% @airline.sort_passengers_by_number_of_flights.each do |passenger| %>
         <tr id="passenger_<%= passenger.id %>">
           <td><%= passenger.name %></td>
         </tr>
