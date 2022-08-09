@@ -1,0 +1,17 @@
+<h1>Airline</h1>
+
+
+<% @airline.sort_by_number_of_passengers.each do |passenger| %>
+  <table>
+    <thead>
+      <tr>
+        <th>Passengers</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr id="passenger_<%= passenger.id %>">
+        <td><%= passenger.name %></td>
+      </tr>
+    </tbody>
+  </table>
+<% end %>
