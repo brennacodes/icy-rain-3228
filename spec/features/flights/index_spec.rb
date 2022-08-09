@@ -65,6 +65,6 @@ RSpec.describe 'flights index page', type: :feature do
       expect(page).to have_content(passenger_2.name)
       expect(page).not_to have_content(passenger_1.name)
 
-      expect(Passenger.find(passenger_1.id)).to exist
+      expect(Passenger.where(id: passenger_1.id)).to exist
   end
 end
